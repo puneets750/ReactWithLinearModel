@@ -34,7 +34,7 @@ function App() {
   };
 
   const renderPlot = () => {
-    const url = 'http://localhost:3002/chartDataLinearModel';
+    const url = 'http://localhost:3002/chartDataLinearModelV2?filename=da.csv';
     fetch(url)
       .then(response => response.json())
       .then(data => {
