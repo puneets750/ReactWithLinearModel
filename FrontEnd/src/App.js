@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import Chart from 'chart.js/auto';
-//import 'chartjs-plugin-annotation';
 import annotationPlugin from "chartjs-plugin-annotation";
-
+import './App.css'
 function App() {
   const [file, setFile] = useState(null);
 
@@ -100,11 +99,28 @@ function App() {
   return (
     <div>
       <form>
+        <header style={{ 
+        width: '100%', 
+        textAlign: 'center', 
+        padding: '20px', 
+        fontSize: '29px', 
+        fontFamily: 'sans-serif' 
+      }}>Linear Regression App</header>
+        <div style={{ 
+          width: '100%', 
+          textAlign: 'center', 
+          padding: '20px', 
+        }}>
         <input type="file" id="csvFileInput" />
         <button type="button" onClick={uploadCSV}>Upload</button>
-        <button type="button" onClick={renderPlot}>RenderPlot</button>
-        <h1>Scatter Plot</h1>
+        <button style={{ margin: '20px' }} type="button" onClick={renderPlot}>RenderPlot</button>
+        <div>
+        <h1 style={{ margin: '20px' }}>Plot appears here</h1>
+        <p align="center">
         <canvas id="myChart"></canvas>
+        </p>
+        </div>
+        </div>
       </form>
     </div>
   );
